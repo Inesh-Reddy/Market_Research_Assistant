@@ -1,0 +1,2 @@
+# Database Design
+PostgreSQL (SQLite via DATABASE_URL for local tests). UUID PKs, created/updated timestamps, FK executions→conversations, indexes on execution_id/status/agent_name/event_type. JSONB (JSON on SQLite) for event payloads and agent result JSON. Tables: conversations, executions, agent_executions, execution_events, agent_results, prompt_versions. No secrets stored. Alembic: `uv run alembic upgrade head` (see apps/backend/alembic.ini). Local dev also auto-creates tables via init_db().
